@@ -1,0 +1,400 @@
+@use "_variables";
+@use "_mixin";
+
+.section__spots * {
+  //swiperの幅がw900px以上でおかしくなるため対策として
+  min-height: 0;
+  min-width: 0;
+}
+
+.section__spots {
+  position: relative;
+  padding-top: 45.7px;
+  background-color: transparent;
+  margin-top: -45.7px;
+
+  @include mixin.mq(lg) {
+    padding-top: 120px;
+    margin-top: -120px;
+  }
+  @include mixin.mq(xl) {
+    padding-top: 120px;
+    margin-top: -120px;
+  }
+}
+
+.spots__inner {
+  position: relative;
+  background-color: variables.$color__blue--300;
+  margin-top: -2px;
+  padding-bottom: 2px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 45.7px;
+    width: 100%;
+    background-image: url(../img/prizes=bgbottom_wave.png);
+    background-repeat: repeat-x;
+    background-position: left -5px center;
+    background-size: contain;
+    z-index: 2;
+    top: -44.2px;
+
+    @include mixin.mq(lg) {
+      height: 120px;
+      top: -120px;
+    }
+
+    @include mixin.mq(xl) {
+      height: 120px;
+      top: -117.5px;
+      left: 2.5px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 45px;
+    width: 100%;
+    background-image: url(../img/prizes=bgbottom_wave.png);
+    background-repeat: repeat-x;
+    background-position: left -5px center;
+    background-size: contain;
+    z-index: 1;
+    bottom: -44px;
+    transform: rotate(180deg);
+
+    @include mixin.mq(lg) {
+      height: 120px;
+      bottom: -119px;
+      z-index: -2;
+    }
+
+    @include mixin.mq(xl) {
+      height: 120px;
+      bottom: -102.5px;
+      left: -5px;
+      z-index: -2;
+    }
+  }
+}
+
+.spots__main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  @include mixin.mq(lg) {
+    flex-direction: row;
+    padding-left: max(30px, 50vw - 512px);
+    gap: 32px;
+  }
+  @include mixin.mq(xl) {
+    flex-direction: row;
+    padding-left: max(30px, 50vw - 512px);
+    gap: 32px;
+  }
+}
+
+.spots__heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: auto;
+  padding-top: 2px;
+  gap: 8px;
+
+  @include mixin.mq(lg) {
+    flex-direction: column;
+    justify-content: start;
+    width: 56px;
+  }
+  @include mixin.mq(xl) {
+    flex-direction: column;
+    justify-content: start;
+    width: 56px;
+  }
+}
+
+.spots-heading__icon {
+  width: 28px;
+
+  @include mixin.mq(lg) {
+    width: 56px;
+    padding-bottom: 16px;
+  }
+  @include mixin.mq(xl) {
+    width: 56px;
+    padding-bottom: 7px;
+  }
+}
+
+.spots-section-title {
+  color: variables.$color__white;
+  text-align: center;
+  font-family: variables.$font-title-ja;
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1.25;
+
+  @include mixin.mq(lg) {
+    font-size: 4rem;
+    letter-spacing: 0.25em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+  @include mixin.mq(xl) {
+    font-size: 4rem;
+    letter-spacing: 0.25em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
+
+/* ===============================================
+# swiper
+=============================================== */
+
+.swiper-container {
+  position: relative;
+}
+.p-swiper__spots {
+  position: relative;
+}
+.swiper-wrapper {
+  position: relative;
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.swiper-slide__spots {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  border-radius: 12px;
+  background: variables.$color__white;
+  overflow: hidden;
+  flex-grow: 1;
+
+  @include mixin.mq(lg) {
+    border-radius: 24px;
+  }
+  @include mixin.mq(xl) {
+    border-radius: 29px 29px 23px 23px;
+    gap: 26px;
+  }
+}
+
+.spots-card__img-box {
+  border-radius: 12px 12px 0 0;
+  margin-left: -0.86px; //画像左端に空白ができてしまったため調整
+
+  @include mixin.mq(lg) {
+    border-radius: 24px 24px 0 0;
+  }
+  @include mixin.mq(xl) {
+    border-radius: 29px 29px 0 0;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.spots-card__txt-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+  padding-left: 23.5px;
+  padding-right: 23.5px;
+  padding-bottom: 29.16px;
+  align-self: stretch;
+
+  @include mixin.mq(lg) {
+    padding: 0 32px;
+    padding-bottom: 40px;
+    gap: 25px;
+  }
+  @include mixin.mq(xl) {
+    padding: 0 32px;
+    padding-bottom: 42px;
+    gap: 25px;
+  }
+}
+
+.spots-card__ttl {
+  text-align: center;
+
+  @include mixin.mq(lg) {
+    font-size: 2rem;
+  }
+}
+
+.spots-card__txt {
+}
+
+// ==============================
+//     navigation について
+// ==============================
+.swiper-button__wrapper {
+  position: absolute;
+  top: calc(100% - 31px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 560px;
+  z-index: 1;
+  @include mixin.mq(xl) {
+    top: calc(100% - 56px);
+    gap: 804px;
+  }
+}
+
+.swiper-button-prev {
+  //位置はここで指定
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: variables.$color-accent--yellow;
+  border-radius: 50%;
+  margin-top: 0;
+
+  @include mixin.mq(xl) {
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 57px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background: url(../img/spots=slider__arrow.svg) no-repeat center center /
+      cover;
+    //配置, 回転
+  }
+}
+
+.swiper-button-next {
+  //位置はここで指定
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: variables.$color-accent--yellow;
+  border-radius: 50%;
+  margin-top: 0;
+
+  @include mixin.mq(xl) {
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 57px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background: url(../img/spots=slider__arrow.svg) no-repeat center center /
+      cover;
+    transform: rotate(180deg);
+    //配置, 回転
+  }
+}
+
+.spots__bottom {
+  position: relative;
+}
+
+.spots-bottom__bgimg {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 80px;
+  @include mixin.mq(xl) {
+    top: -97px;
+    left: calc(50% - 720px);
+    width: 100px;
+  }
+  img {
+  }
+}
+
+.spots__bottom--body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include mixin.mq(xl) {
+    margin-top: 51px;
+    flex-direction: row;
+    gap: 81px;
+  }
+}
+
+.spots-bottom__logoimg {
+  width: 255px;
+
+  @include mixin.mq(lg) {
+    width: 360px;
+  }
+
+  @include mixin.mq(xl) {
+    width: 495px;
+    margin-top: -6px;
+  }
+
+  img {
+  }
+}
+
+.spots-bottom__textbox {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include mixin.mq(lg) {
+  }
+  @include mixin.mq(xl) {
+    margin-top: 0;
+    padding-top: 13px;
+    align-items: end;
+  }
+}
+
+.spots-bottom__text {
+  color: variables.$color__white;
+  text-align: center;
+  font-size: 1.1444rem;
+  @include mixin.mq(md) {
+    font-size: 1.4rem;
+  }
+
+  @include mixin.mq(lg) {
+    font-size: 1.4rem;
+  }
+  @include mixin.mq(xl) {
+    font-size: 1.6rem;
+  }
+}
+
+.spots__btn {
+  margin-top: 24px;
+  margin-bottom: 20px;
+  padding: 4px 22px 6px;
+
+  @include mixin.mq(lg) {
+    padding: 9px 37px 10px 38px;
+  }
+  @include mixin.mq(xl) {
+    padding: 9px 37px 10px 38px;
+  }
+}

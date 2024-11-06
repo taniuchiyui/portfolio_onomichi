@@ -1,0 +1,313 @@
+@use "variables";
+@use "mixin";
+/* ===============================================
+# font-size
+=============================================== */
+/* ルートの文字サイズを10pxに設定 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
+
+  font-size: 1.2rem;
+
+  @include mixin.mq(md) {
+    font-size: 1.4rem;
+  }
+  @include mixin.mq(lg) {
+    font-size: 1.6em;
+  }
+  @include mixin.mq(xl) {
+    font-size: 1.6em;
+  }
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  @include mixin.mq(xl) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  @include mixin.mq(md) {
+    font-size: 1.4rem;
+  }
+
+  @include mixin.mq(lg) {
+    font-size: 2rem;
+  }
+
+  @include mixin.mq(xl) {
+    font-size: 2rem;
+  }
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  @include mixin.mq(md) {
+    font-size: 1.6rem;
+  }
+
+  @include mixin.mq(lg) {
+    font-size: 1.6rem;
+  }
+
+  @include mixin.mq(xl) {
+    font-size: 1.6rem;
+  }
+}
+
+h5 {
+  font-size: 1.4rem;
+
+  @include mixin.mq(md) {
+    font-size: 1.4rem;
+  }
+
+  @include mixin.mq(lg) {
+    font-size: 1.6rem;
+  }
+
+  @include mixin.mq(xl) {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===============================================
+# 共通
+=============================================== */
+
+body {
+  line-height: 1.6;
+  font-family: variables.$font-ja;
+  color: variables.$color-text;
+  background-color: variables.$color-background;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.inner {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+
+  @include mixin.mq(md) {
+    width: 600px;
+  }
+
+  @include mixin.mq(lg) {
+    padding: 0 30px;
+  }
+
+  @include mixin.mq(xl) {
+    width: 1024px;
+    padding: 0;
+  }
+}
+
+.hidden-md {
+  @include mixin.mq(md) {
+    display: none;
+  }
+  @include mixin.mq(sm) {
+    display: none;
+  }
+  @include mixin.mq(xs) {
+    display: none;
+  }
+}
+
+.hidden-pc {
+  @include mixin.mq(lg) {
+    display: none;
+  }
+  @include mixin.mq(xl) {
+    display: none;
+  }
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+a {
+  cursor: pointer;
+  &:hover {
+    color: variables.$color__blue--300;
+  }
+}
+
+a[href^="tel:"] {
+  &:hover {
+    color: variables.$color-text;
+  }
+}
+
+/* ===============================================
+# 共通パーツ
+=============================================== */
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  background: variables.$color__white;
+  box-shadow: 0px 4px 0px 0px variables.$color__blown;
+  border: 2px solid variables.$color__blown;
+  transition: all 0.3s;
+  margin-bottom: 4px;
+
+  @include mixin.mq(lg) {
+    border: 3px solid variables.$color__blown;
+  }
+
+  @include mixin.mq(xl) {
+    border: 3px solid variables.$color__blown;
+  }
+
+  &:hover {
+    background: variables.$color-accent--yellow;
+  }
+
+  a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: variables.$color__blown;
+
+    @include mixin.mq(lg) {
+      font-size: 2rem;
+    }
+
+    @include mixin.mq(xl) {
+      font-size: 2rem;
+    }
+  }
+
+  button{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: variables.$color__blown;
+
+    @include mixin.mq(lg) {
+      font-size: 2rem;
+    }
+
+    @include mixin.mq(xl) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.btn-sns {
+  padding: 6px 22px 8px;
+
+  @include mixin.mq(lg) {
+    padding: 8px 37px 10px 37px;
+  }
+
+  @include mixin.mq(xl) {
+    padding: 10px 40px 12px 40px;
+  }
+
+  a {
+    @include mixin.mq(xs) {
+      font-size: 4vmin;
+    }
+  }
+}
+
+.heading {
+  display: flex;
+  padding: 0px 15px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mixin.mq(lg) {
+    width: 620px;
+    gap: 7.5px;
+  }
+
+  @include mixin.mq(xl) {
+    width: 620px;
+    gap: 7.5px;
+  }
+}
+
+.heading__icon {
+  width: 37.333px;
+  height: 37.333px;
+
+  @include mixin.mq(lg) {
+    width: 50px;
+    height: 50px;
+  }
+
+  @include mixin.mq(xl) {
+    width: 50px;
+    height: 50px;
+  }
+
+  img {
+  }
+}
+
+.section-title-en {
+  color: variables.$color__blown;
+  text-align: center;
+  font-family: variables.$font-title-en;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-top: 1px; //ピクセルパーフェクト調整用
+
+  @include mixin.mq(lg) {
+    font-size: 2rem;
+    margin-top: 0; //ピクセルパーフェクト調整用
+  }
+
+  @include mixin.mq(xl) {
+    font-size: 2rem;
+    margin-top: 0; //ピクセルパーフェクト調整用
+  }
+}
+
+.section-title-ja {
+  color: variables.$color__blown;
+  text-align: center;
+  font-family: variables.$font-title-ja;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  padding-bottom: 6px;
+  border-bottom: 6px solid variables.$color-accent--yellow;
+
+  @include mixin.mq(lg) {
+    font-size: 32px;
+    border-bottom: 8px solid variables.$color-accent--yellow;
+    padding-bottom: 8px;
+  }
+
+  @include mixin.mq(xl) {
+    font-size: 32px;
+    border-bottom: 8px solid variables.$color-accent--yellow;
+    padding-bottom: 8px;
+  }
+}

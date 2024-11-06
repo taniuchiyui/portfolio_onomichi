@@ -1,0 +1,491 @@
+@use "_variables";
+@use "_mixin";
+
+.section__step {
+  margin-top: 32.8px;
+  position: relative;
+  overflow: hidden;
+
+  @include mixin.mq(lg) {
+    margin-top: 60px;
+    margin-bottom: 0;
+  }
+
+  @include mixin.mq(xl) {
+    margin-top: 60px;
+    margin-bottom: 0;
+  }
+}
+
+.step__inner {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.step__contents {
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mixin.mq(lg) {
+    padding-top: 60px;
+    gap: 40px;
+  }
+
+  @include mixin.mq(xl) {
+    padding-top: 60px;
+  }
+}
+
+.step__top {
+  margin-bottom: 16px;
+
+  @include mixin.mq(lg) {
+    margin-bottom: 0;
+  }
+  @include mixin.mq(xl) {
+    margin-bottom: 0;
+  }
+}
+
+.step__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15.5px;
+  margin-top: 31px;
+
+  @include mixin.mq(lg) {
+    gap: 7px;
+    flex-direction: row;
+    margin-top: -15px;
+  }
+
+  @include mixin.mq(xl) {
+    gap: 32px;
+    flex-direction: row;
+    margin-top: 39.5px;
+  }
+}
+
+.step-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+
+  @include mixin.mq(md) {
+    width: 460px;
+  }
+
+  @include mixin.mq(lg) {
+    width: min(100% / 3, 294px);
+    justify-content: flex-start;
+  }
+
+  @include mixin.mq(xl) {
+    width: 320px;
+    justify-content: flex-start;
+    gap: 0;
+  }
+}
+
+.step__pic01 {
+}
+
+.step__pic02 {
+  position: relative;
+  padding-top: 33.8px;
+  @include mixin.mq(lg) {
+    padding-top: 50px;
+  }
+  @include mixin.mq(xl) {
+    padding-top: 68px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 34px;
+    background: url(../img/step=line.png) no-repeat center center/cover;
+    z-index: 1;
+    top: 0;
+    align-items: end;
+
+    @include mixin.mq(lg) {
+      width: 70px;
+      height: 16px;
+      left: -49px;
+      top: 142.5px;
+      background: url(../img/step=line--pc.png) no-repeat center center/cover;
+    }
+
+    @include mixin.mq(xl) {
+      width: 113px;
+      height: 24px;
+      left: -97px;
+      top: 204.5px;
+      background: url(../img/step=line--pc.png) no-repeat center center/cover;
+    }
+  }
+}
+
+.step__pic03 {
+  position: relative;
+  padding-top: 33px;
+  @include mixin.mq(lg) {
+    padding-top: 0;
+  }
+  @include mixin.mq(xl) {
+    padding-top: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 34px;
+    background: url(../img/step=line.png) no-repeat center center/cover;
+    z-index: 1;
+    top: 0;
+    align-items: end;
+
+    @include mixin.mq(lg) {
+      width: 70px;
+      height: 16px;
+      left: -50px;
+      top: 142.5px;
+      background: url(../img/step=line--pc.png) no-repeat center center/cover;
+    }
+    @include mixin.mq(xl) {
+      width: 113px;
+      height: 24px;
+      left: -88px;
+      top: 204.5px;
+      background: url(../img/step=line--pc.png) no-repeat center center/cover;
+    }
+  }
+}
+
+.step__head {
+  @include mixin.mq(xl) {
+    margin-top: 24px;
+  }
+  span {
+    font-size: 1.6rem;
+    font-weight: 700;
+    @include mixin.mq(lg) {
+      font-size: 2.4rem;
+    }
+    @include mixin.mq(xl) {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.step__pic03 .step__head {
+  //このテキストだけずれていたため調整
+  margin-left: 3px;
+  @include mixin.mq(xl) {
+    margin-left: 5px;
+  }
+}
+
+.step__text {
+  text-align: center;
+  margin-top: -1px;
+
+  @include mixin.mq(lg) {
+    font-size: 1.4rem;
+  }
+
+  @include mixin.mq(xl) {
+    max-width: 100%;
+    margin-top: 16px;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    line-height: 1.7;
+  }
+}
+
+.step__sns {
+  margin-top: -0.8px; //ピクセルパーフェクト調整用
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background-color: variables.$color__white;
+  position: relative;
+  @include mixin.mq(xl) {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  &:hover {
+    &::after {
+      border: 1px solid variables.$color__blue--main;
+    }
+
+    a{
+      color: variables.$color-text
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 226px;
+    height: 37.4px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    pointer-events: none;
+
+    @include mixin.mq(lg) {
+      width: 229px;
+      height: 37.4px;
+    }
+    @include mixin.mq(xl) {
+      width: 254.71px;
+      height: 40.59px;
+    }
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    padding-top: 8px;
+    padding-right: 13px;
+    padding-bottom: 7px;
+    padding-left: 41px;
+    font-size: 14px;
+    margin-left: -1px;
+
+    @include mixin.mq(lg) {
+      padding-left: 44px;
+    }
+
+    @include mixin.mq(xl) {
+      font-size: 16px;
+      margin-left: 0;
+      padding-left: 44px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: url(../img/step=Icon--sns.svg) no-repeat center center/cover;
+      left: 12px;
+      pointer-events: none;
+
+      @include mixin.mq(lg) {
+        width: 24px;
+        height: 24px;
+        left: 12px;
+      }
+      @include mixin.mq(xl) {
+        width: 24px;
+        height: 24px;
+        left: 12px;
+      }
+    }
+  }
+}
+
+.step__btn {
+  margin-top: 16px;
+  padding: 5px 22.5px 5.5px;
+
+  @include mixin.mq(lg) {
+    margin-top: 8px;
+    padding: 8px 38px 10px;
+  }
+
+  @include mixin.mq(xl) {
+    margin-top: 49px;
+    padding: 8px 38px 10px;
+  }
+}
+
+/* ===============================================
+# stepbg__left
+=============================================== */
+.stepbg__left {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+.stepbg__left--items {
+}
+
+.stepbg__left--item01 {
+  top: 32px;
+  position: absolute;
+  width: 149px;
+  left: calc(50% - 187.5px);
+
+  @include mixin.mq(md) {
+    width: 180px;
+    left: calc(50% - 250px);
+  }
+
+  @include mixin.mq(lg) {
+    width: 380px;
+    top: 0;
+    left: calc(50% - 560px);
+  }
+  @include mixin.mq(xl) {
+    width: 460px;
+    top: 0;
+    left: calc(50% - 720px);
+  }
+  img {
+  }
+}
+
+.stepbg__left--item02 {
+  width: 55px;
+  position: absolute;
+  top: 549.55px;
+  left: calc(50% - 167.5px);
+
+  @include mixin.mq(md) {
+    left: calc(50% - 250px);
+  }
+
+  @include mixin.mq(lg) {
+    width: 70px;
+    top: 649px;
+    left: 0;
+  }
+  @include mixin.mq(xl) {
+    width: 100px;
+    top: 640px;
+    left: 30px;
+  }
+  img {
+  }
+}
+
+/* ===============================================
+# stepbg__right
+=============================================== */
+
+.stepbg__right {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+
+  @include mixin.mq(lg) {
+    left: 50%;
+  }
+
+  @include mixin.mq(xl) {
+    left: 50%;
+    max-width: 1500px;
+  }
+}
+
+.stepbg__right--items {
+}
+
+.stepbg__right--item01 {
+  position: absolute;
+  width: 105px;
+  top: 33px;
+  left: calc(50% + 58.5px);
+
+  @include mixin.mq(lg) {
+    width: 238px;
+    height: 141px;
+    left: calc(50% + 183px);
+  }
+  @include mixin.mq(xl) {
+    width: 238px;
+    height: 141px;
+    left: calc(50% + 287px);
+    top: 35px;
+  }
+
+  img {
+  }
+}
+
+.stepbg__right--item02 {
+  position: absolute;
+  width: 94px;
+  left: -43px;
+  left: calc(50% + 124.5px);
+  top: 38px;
+
+  @include mixin.mq(lg) {
+    width: 214px;
+    height: 181px;
+    left: calc(50% + 333px);
+  }
+  @include mixin.mq(xl) {
+    width: 214px;
+    height: 181px;
+    left: calc(50% + 437px);
+    top: 44px;
+  }
+
+  img {
+  }
+}
+
+.stepbg__right--item03 {
+  transform: scaleX(-1);
+  z-index: -2;
+  position: absolute;
+  width: 55px;
+  left: calc(50% + 112.5px);
+  top: 106px;
+
+  @include mixin.mq(md) {
+    left: calc(50% + 195px);
+    top: 126px;
+  }
+
+  @include mixin.mq(lg) {
+    width: 70px;
+    left: calc(100% - 70px);
+    top: 198px;
+  }
+  @include mixin.mq(xl) {
+    width: 100px;
+    left: calc(100% - 130px);
+    top: 210px;
+  }
+
+  img {
+  }
+}
+
+.stepbg__right--item04 {
+  position: absolute;
+  width: 55px;
+  transform: scaleX(-1);
+  left: calc(50% + 112.5px);
+  top: 911.68px;
+
+  @include mixin.mq(md) {
+    left: calc(50% + 195px);
+    top: 921.68px;
+  }
+  img {
+  }
+}

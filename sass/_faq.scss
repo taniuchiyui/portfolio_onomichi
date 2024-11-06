@@ -1,0 +1,202 @@
+@use "_variables";
+@use "_mixin";
+
+.section__faq {
+  margin-top: 84px;
+  @include mixin.mq(lg) {
+    margin-top: 240px;
+  }
+  @include mixin.mq(xl) {
+    margin-top: 222px;
+  }
+}
+
+.faq__inner {
+}
+
+.faq-accordion {
+}
+
+.faq-accordion__inner {
+}
+
+.qa-box {
+  margin-top: 23.5px;
+
+  @include mixin.mq(lg) {
+    margin-top: 40px;
+  }
+  @include mixin.mq(xl) {
+    margin-top: 40px;
+  }
+}
+
+.qa-box li {
+  border-radius: 12px;
+  border: 2px solid variables.$color-text;
+  background: variables.$color__white;
+  @include mixin.mq(lg) {
+    border-radius: 16px;
+  }
+  @include mixin.mq(xl) {
+    border-radius: 16px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 12.3px;
+
+    @include mixin.mq(lg) {
+      margin-top: 24px;
+    }
+    @include mixin.mq(xl) {
+      margin-top: 24px;
+    }
+  }
+}
+
+.qa-box section {
+}
+
+.qa-box__heading {
+  display: flex;
+  gap: 13px;
+  padding: 10.5px 14px 8.5px;
+  align-items: center;
+  cursor: pointer;
+  @include mixin.mq(lg) {
+    padding: 20.5px 22px 19.5px 22px;
+  }
+  @include mixin.mq(xl) {
+    padding: 20px;
+    gap: 19px;
+  }
+}
+
+.qa-box li:nth-child(1) .qa-box__heading {
+  padding: 10.5px 14px;
+
+    @include mixin.mq(lg) {
+      padding: 20.5px 22px 19.5px 22px;
+  }
+    @include mixin.mq(xl) {
+      padding: 20px;
+    
+  }
+}
+
+// アコーディオンアイコン“Q”
+.qa-box__heading-icon {
+  display: inline-flex;
+  font-family: variables.$font-JosefinSans;
+  font-size: 2.4rem;
+  color: variables.$color__blue--main;
+  line-height: 1;
+
+  @include mixin.mq(lg) {
+    font-size: 3.2rem;
+  }
+  @include mixin.mq(xl) {
+    font-size: 3.2rem;
+  }
+}
+
+/*アコーディオンタイトル*/
+.title {
+  transition: all 0.5s ease;
+  flex-grow: 1;
+}
+
+// アコーディオン開閉アイコン
+.qa-box__heading-toggle {
+  position: relative; /*+マークの位置基準とするためrelative指定*/
+  display: inline-block;
+  width: 26.182px;
+  height: 26.182px;
+  border-radius: 50%;
+  background-color: variables.$color__blue--main;
+  @include mixin.mq(lg) {
+    width: 48px;
+    height: 48px;
+  }
+  @include mixin.mq(xl) {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/*アイコンの＋と-*/
+.qa-box__heading-toggle::before,
+.qa-box__heading-toggle::after {
+  position: absolute;
+  content: "";
+  width: 10.182px;
+  height: 1.455px;
+  background-color: variables.$color__white;
+  top: 48%;
+  left: 32%;
+
+  @include mixin.mq(lg) {
+    width: 18.667px;
+    height: 2.667px;
+  }
+  @include mixin.mq(xl) {
+    width: 18.667px;
+    height: 2.667px;
+  }
+}
+.qa-box__heading-toggle::before {
+}
+.qa-box__heading-toggle::after {
+  transform: rotate(90deg);
+  transition: all 0.5s ease;
+}
+
+/*　closeというクラスがついたら形状変化　*/
+.qa-box__heading.close .qa-box__heading-toggle::after {
+  transform: rotate(0deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.qa-box__body {
+  display: none; /*はじめは非表示*/
+  background: variables.$color__gray--100;
+  padding: 17px 14.5px 12.5px 14.5px;
+
+  border-radius: 0 0 12px 12px;
+  @include mixin.mq(lg) {
+    padding: 24px;
+    border-radius: 0 0 16px 16px;
+  }
+  @include mixin.mq(xl) {
+    padding: 26px 23px 22px;
+    border-radius: 0 0 16px 16px;
+  }
+}
+
+.qa-box-body__inner {
+  display: flex;
+  align-items: center;
+  gap: 15.5px;
+}
+
+.qa-box-body__inner h5 a {
+  text-decoration: underline;
+}
+
+// アコーディオンアイコン"A”
+.qa-box__answer-icon {
+  font-family: variables.$font-JosefinSans;
+  font-size: 2.4rem;
+  color: variables.$color__blue--main;
+  line-height: 1.25;
+  @include mixin.mq(lg) {
+    font-size: 3.2rem;
+  }
+  @include mixin.mq(xl) {
+    font-size: 3.2rem;
+  }
+}
+
+.qa-box__body h5 {
+  flex-grow: 1;
+}

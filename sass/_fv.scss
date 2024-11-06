@@ -1,0 +1,421 @@
+@use "_variables";
+@use "_mixin";
+
+.fv {
+  margin-top: 64px;
+  height: 710px;
+  @include mixin.mq(xs) {
+    overflow: hidden;
+  }
+
+  @include mixin.mq(lg) {
+    height: calc(900px - 64px + 80px);
+    padding-bottom: 80px;
+  }
+  @include mixin.mq(xl) {
+    height: calc(900px - 64px + 80px);
+    padding-bottom: 80px;
+  }
+}
+
+.fv__bg {
+  background: url(../img/fv=bg.png) no-repeat center center/cover;
+  height: 554px;
+  border-radius: 0px 0px 24px 24px;
+
+  @include mixin.mq(md) {
+    background: url(../img/fv=bg--pc.png) no-repeat center center/cover;
+    border-radius: 0px 0px 40px 40px;
+  }
+
+  @include mixin.mq(lg) {
+    background: url(../img/fv=bg--pc.png) no-repeat center center/cover;
+    border-radius: 0px 0px 40px 40px;
+    height: 740px;
+  }
+
+  @include mixin.mq(xl) {
+    background: url(../img/fv=bg--pc.png) no-repeat center center/cover;
+    border-radius: 0px 0px 40px 40px;
+    height: 740px;
+  }
+}
+
+.fv__inner {
+}
+
+.fv__textbox {
+  padding-top: 17px;
+
+  @include mixin.mq(md) {
+    padding-top: 17px;
+  }
+
+  @include mixin.mq(lg) {
+    padding-top: 34px;
+  }
+  @include mixin.mq(xl) {
+    padding-top: 34px;
+  }
+}
+
+.fv__sub-title {
+  text-align: center;
+  text-shadow: 0px 0px 30px variables.$color__white;
+
+  p {
+    font-family: variables.$font-title-ja;
+    font-size: 14px;
+    line-height: 1.3;
+    @include mixin.mq(lg) {
+      font-size: 24px;
+      font-weight: 500;
+      &:last-child {
+        letter-spacing: 0.01em;
+      }
+    }
+
+    @include mixin.mq(xl) {
+      font-size: 24px;
+      font-weight: 500;
+      &:last-child {
+        letter-spacing: 0.01em;
+      }
+    }
+  }
+}
+
+.fv__title {
+  margin-top: 20px;
+  @include mixin.mq(lg) {
+    margin-top: 21px;
+  }
+
+  @include mixin.mq(xl) {
+    margin-top: 21px;
+  }
+}
+
+.main__item01 {
+  width: 334px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mixin.mq(lg) {
+    width: 520px;
+  }
+  @include mixin.mq(xl) {
+    width: 520px;
+  }
+
+  img {
+  }
+}
+
+.main__item02 {
+  margin-top: 11px;
+  width: 240px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mixin.mq(lg) {
+    margin-top: 16px;
+    width: 356px;
+  }
+
+  @include mixin.mq(xl) {
+    margin-top: 16px;
+    width: 356px;
+  }
+
+  img {
+  }
+}
+
+.fv__images {
+  position: relative;
+}
+
+.img__fukidashi {
+  position: absolute;
+  left: calc(50% - 26px);
+  transform: translateX(-100%);
+  top: 18px;
+  width: 142px;
+  max-width: 100%;
+
+  @include mixin.mq(lg) {
+    width: 244px;
+    height: 130px;
+    top: 0;
+    left: calc(50% - 387px);
+    transform: none;
+  }
+
+  @include mixin.mq(xl) {
+    width: 244px;
+    height: 130px;
+    top: 0;
+    left: calc(50% - 387px);
+    transform: none;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.img__present {
+  position: absolute;
+  left: calc(50% + 32px);
+  top: 11px;
+  width: 111px;
+  max-width: 100%;
+  @include mixin.mq(lg) {
+    width: 182px;
+    height: 182px;
+    left: calc(50% + 116px);
+    top: 17px;
+  }
+
+  @include mixin.mq(xl) {
+    width: 182px;
+    height: 182px;
+    left: calc(50% + 116px);
+    top: 17px;
+  }
+
+  img {
+  }
+}
+
+.img__smartphone {
+  width: 200px;
+  max-width: 100%;
+
+  position: absolute;
+  top: 114px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  @include mixin.mq(lg) {
+    top: 33px;
+    width: 250px;
+  }
+
+  @include mixin.mq(xl) {
+    top: 33px;
+    width: 250px;
+  }
+  img {
+  }
+}
+
+.fv__application {
+  display: flex;
+  width: 160px;
+  max-width: 100%;
+
+  flex-direction: column;
+  padding-bottom: 15.2px;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 122px;
+
+  border-radius: 12.8px;
+  background: variables.$color__white;
+
+  @include mixin.mq(lg) {
+    width: 201px;
+    gap: 0;
+    top: 153.5px;
+    border-radius: 16px;
+    padding-bottom: 20px;
+  }
+
+  @include mixin.mq(xl) {
+    width: 200px;
+    gap: 0;
+    top: 153.5px;
+    border-radius: 16px;
+    padding-bottom: 20px;
+  }
+}
+
+.application__title {
+  display: flex;
+  padding: 7px 9.6px 5.5px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  background: linear-gradient(
+    265deg,
+    #ac3790 -3.52%,
+    #d65a5c 44.94%,
+    #f4c06d 92.38%
+  );
+  border-radius: 12.8px 12.8px 0 0;
+
+  @include mixin.mq(lg) {
+    padding: 8.205px 12px;
+  }
+
+  @include mixin.mq(xl) {
+    padding: 8.205px 12px;
+  }
+
+  p {
+    color: variables.$color__white;
+    text-align: center;
+    font-feature-settings: "pref" on;
+    font-size: 1.28rem;
+
+    @include mixin.mq(lg) {
+      font-size: 1.6rem;
+    }
+
+    @include mixin.mq(xl) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.application__body {
+  text-align: center;
+  margin-top: 13.5px;
+}
+
+.item1 {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding-bottom: 0.2px;
+  border-bottom: 2.4px solid variables.$color-accent--red;
+  @include mixin.mq(lg) {
+    font-size: 1.4rem;
+    border-bottom: 3px solid variables.$color-accent--red;
+  }
+
+  @include mixin.mq(xl) {
+    font-size: 1.4rem;
+    border-bottom: 3px solid variables.$color-accent--red;
+  }
+}
+
+.item2 {
+  font-feature-settings: "pref" on;
+  font-size: 12px;
+  padding-top: 4.2px;
+
+  @include mixin.mq(lg) {
+    font-size: 16px;
+    padding-top: 5.5px;
+  }
+
+  @include mixin.mq(xl) {
+    font-size: 16px;
+    padding-top: 5.5px;
+  }
+}
+.application__btn {
+  height: 32px;
+  padding: 6px 22.5px 8px;
+  border: 2px solid variables.$color__blown;
+  margin-top: 12.5px;
+
+  @include mixin.mq(lg) {
+    height: 40px;
+    padding: 6px 22.244px 8px 22.244px;
+    margin-top: 16px;
+  }
+
+  @include mixin.mq(xl) {
+    height: 40px;
+    padding: 6px 22.244px 8px 22.244px;
+    margin-top: 16px;
+  }
+  a {
+    font-size: 14px;
+    @include mixin.mq(xl) {
+      font-size: 16px;
+    }
+  }
+}
+
+.img__food {
+  position: absolute;
+  top: 392px;
+  left: calc(50% - 168px);
+  z-index: 2;
+  width: 90.26px;
+  max-width: 100%;
+
+  @include mixin.mq(lg) {
+    left: calc(50% - 424px);
+    width: 212px;
+    height: 332px;
+    top: 227px;
+  }
+
+  @include mixin.mq(xl) {
+    left: calc(50% - 424px);
+    width: 212px;
+    height: 332px;
+    top: 227px;
+  }
+
+  img {
+  }
+}
+
+.image__cat01 {
+  position: absolute;
+  top: 406px;
+  left: calc(50% + 105.5px);
+  z-index: 2;
+  width: 62px;
+  max-width: 100%;
+
+  @include mixin.mq(lg) {
+    left: calc(50% + 191px);
+    width: 170px;
+    top: 309px;
+  }
+
+  @include mixin.mq(xl) {
+    left: calc(50% + 191px);
+    width: 170px;
+    top: 309px;
+  }
+
+  img {
+  }
+}
+
+.image__cat02 {
+  position: absolute;
+  top: 460px;
+  right: 9px;
+  z-index: 2;
+  width: 98px;
+  max-width: 100%;
+  left: calc(50% + 60px);
+
+  @include mixin.mq(lg) {
+    left: calc(50% + 191px);
+    width: 233px;
+    top: 429px;
+  }
+
+  @include mixin.mq(xl) {
+    left: calc(50% + 191px);
+    width: 233px;
+    top: 429px;
+  }
+
+  img {
+  }
+}

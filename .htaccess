@@ -1,0 +1,5 @@
+
+AuthUserFile "/home/mcdue23/taniuchiyui.com/htpasswd/.htpasswd"
+AuthName "Member Site"
+AuthType BASIC
+require valid-user

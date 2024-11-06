@@ -1,0 +1,395 @@
+@use "_variables";
+@use "_mixin";
+
+.section__footer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.footer__bgimg {
+  position: absolute;
+  top: 80px;
+  text-align: right;
+  pointer-events: none;
+
+  @include mixin.mq(lg) {
+    width: min(1100px, 100vw);
+  }
+  @include mixin.mq(xl) {
+    width: 1352px;
+  }
+}
+
+.footer__bgimg--wrapper {
+  display: inline-block;
+
+  @include mixin.mq(lg) {
+    width: 70px;
+  }
+  @include mixin.mq(xl) {
+    width: 100px;
+  }
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(600px, 100vw - 20px * 2);
+
+  @include mixin.mq(lg) {
+    width: min(1024px, 100vw - 30px * 2);
+  }
+  @include mixin.mq(xl) {
+    width: min(1024px, 100vw - 30px * 2);
+  }
+}
+
+.footer-head {
+  font-family: variables.$font-JosefinSans;
+  padding-top: 37px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mixin.mq(lg) {
+    padding-top: 120px;
+  }
+  @include mixin.mq(xl) {
+    padding-top: 116px;
+  }
+}
+
+.footer-head__heading {
+  font-size: 2rem;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @include mixin.mq(lg) {
+    font-size: 2.4rem;
+  }
+  @include mixin.mq(xl) {
+    font-size: 2.4rem;
+  }
+
+  &::before {
+    position: absolute;
+    content: "\\";
+    left: -5px;
+    @include mixin.mq(lg) {
+    }
+    @include mixin.mq(xl) {
+      left: -7px;
+    }
+  }
+  &::after {
+    position: absolute;
+    content: "/";
+    right: -4px;
+    @include mixin.mq(lg) {
+    }
+    @include mixin.mq(xl) {
+      right: -7px;
+    }
+  }
+}
+
+.footer-head__snsIcons {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.footer-head__snsIcon {
+  width: 32px;
+  @include mixin.mq(lg) {
+    width: 40px;
+  }
+  @include mixin.mq(xl) {
+    width: 40px;
+  }
+  img {
+  }
+
+  a{
+    transition: all  0.3s ease;
+    &:hover{
+      filter: brightness(0.9);
+    }
+  }
+}
+
+.footer-head__iconOnomichi {
+  width: 101%;
+  margin-top: 14px;
+  @include mixin.mq(lg) {
+    margin-top: 30px;
+    width: 755px;
+  }
+  @include mixin.mq(xl) {
+    margin-top: 43px;
+    width: 744px;
+  }
+}
+
+.footer__body--wrapper {
+  width: 100%;
+  margin-top: -1px;
+}
+
+.footer__body {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  background: variables.$color__white;
+  overflow: hidden;
+  @include mixin.mq(lg) {
+    flex-direction: row;
+  }
+  @include mixin.mq(xl) {
+    flex-direction: row;
+  }
+}
+
+.iframe-wrap {
+  width: 100%;
+  padding-top: calc(271 / 335 * 100%);
+  position: relative;
+  @include mixin.mq(lg) {
+    flex: 1;
+    padding-top: calc(400 / 1024 * 100%);
+    order: 1;
+  }
+  @include mixin.mq(xl) {
+    flex: 1;
+    padding-top: calc(400 / 1024 * 100%);
+    order: 1;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.footer__info {
+  display: flex;
+  padding: 22px 21px 23px 21px;
+  align-items: center;
+  justify-content: center;
+
+  @include mixin.mq(lg) {
+    padding: 0;
+    order: 0;
+    flex: 1;
+  }
+  @include mixin.mq(xl) {
+    padding: 0;
+    order: 0;
+    flex: 1;
+  }
+}
+
+.footer__info--wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include mixin.mq(lg) {
+  }
+  @include mixin.mq(xl) {
+    gap: 18px;
+  }
+}
+
+.footer__logo {
+  width: 153px;
+  margin-left: auto;
+  margin-right: auto;
+  @include mixin.mq(lg) {
+    width: 183px;
+    margin: 0;
+  }
+  @include mixin.mq(xl) {
+    padding-top: 3px;
+    width: 183px;
+    margin: 0;
+  }
+  img {
+  }
+}
+
+.footer__textbox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 6px 0;
+
+  @include mixin.mq(lg) {
+  }
+  @include mixin.mq(xl) {
+    gap: 12.5px;
+  }
+}
+
+.footer__textbox--row {
+  display: flex;
+
+  dt {
+    padding-left: 16px;
+    width: 80px;
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    @include mixin.mq(xs) {
+      font-size: 3vmin;
+    }
+
+    @include mixin.mq(md) {
+      font-size: 1.4rem;
+    }
+    @include mixin.mq(lg) {
+      width: 120px;
+      font-size: 1.4rem;
+    }
+    @include mixin.mq(xl) {
+      width: 120px;
+      font-size: 1.6rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: variables.$color__blue--main;
+    }
+  }
+
+  dd {
+    font-size: 1.2rem;
+    @include mixin.mq(xs) {
+      font-size: 3vmin;
+    }
+
+    @include mixin.mq(md) {
+      font-size: 1.4rem;
+    }
+    @include mixin.mq(lg) {
+      font-size: 1.4rem;
+    }
+    @include mixin.mq(xl) {
+      font-size: 1.6rem;
+    }
+
+    a[href^="tel:"] {
+      @include mixin.mq(lg) {
+        pointer-events: none;
+      }
+      @include mixin.mq(xl) {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.to-top {
+  width: 78px;
+  margin-top: 22.5px;
+  z-index: 100;
+
+  @include mixin.mq(lg) {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    margin: 0;
+    width: 80px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  @include mixin.mq(xl) {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    margin: 0;
+    width: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  img {
+  }
+}
+
+.footer__bottom {
+  padding-bottom: 24px;
+  background-color: variables.$color__blue--300;
+  text-align: center;
+  margin-top: 67px;
+  position: relative;
+  width: 100vw;
+
+  @include mixin.mq(lg) {
+    margin-top: 240px;
+  }
+  @include mixin.mq(xl) {
+    margin-top: 240px;
+    padding-bottom: 31px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 45.9px;
+    width: 100vw;
+    background-image: url(../img/prizes=bgbottom_wave.png);
+    background-repeat: repeat-x;
+    background-position: left -7.5px center;
+    background-size: contain;
+    top: -44.4px;
+    left: 0;
+
+    @include mixin.mq(lg) {
+      height: 120px;
+      top: -118px;
+    }
+
+    @include mixin.mq(xl) {
+      height: 120px;
+      top: -119px;
+      background-position: left -5.5px center;
+    }
+  }
+}
+
+.footer__copyright {
+  padding-top: 2px; //perfect pixel調整用
+  color: variables.$color__white;
+  font-size: 1rem;
+  @include mixin.mq(lg) {
+    font-size: 1.4rem;
+  }
+  @include mixin.mq(xl) {
+    font-size: 1.4rem;
+  }
+}

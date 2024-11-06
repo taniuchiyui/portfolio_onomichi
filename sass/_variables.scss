@@ -1,0 +1,42 @@
+@use "mixin";
+
+/* ===============================================
+# font family
+=============================================== */
+$font-ja: "Noto Sans JP", sans-serif;
+$font-title-ja: "Kiwi Maru", serif;
+$font-title-en: "Courgette", cursive;
+$font-JosefinSans: "Josefin Sans", sans-serif;
+
+/* ===============================================
+# color
+=============================================== */
+$color-text: (#4a3636);
+$color-accent--red: (#ce2073);
+$color-accent--yellow: (#ffee56);
+
+$color-background: (#e9f6f8);
+
+// Gray scheme
+$color__white: #ffffff;
+$color__black: #000000;
+$color__blown: $color-text;
+
+$color__gray--100: #f5f5f5;
+$color__gray--200: #ccc;
+
+// Blue scheme
+$color__blue--main: #9ed0e0;
+$color__blue--100: $color-background;
+$color__blue--200: #cce1e4;
+$color__blue--300: #67b0c7;
+
+/* ===============================================
+# z-index
+=============================================== */
+// インデックスの定義
+$z-index-about: 50;
+$z-index-header: 100;
+$z-index-dropdown: 150;
+$z-index-overlay: 160;
+$z-index-modal: 200;

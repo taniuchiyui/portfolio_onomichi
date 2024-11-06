@@ -1,0 +1,20 @@
+// mapモジュールを使う宣言
+@use "sass:map"; 
+// レイアウト幅　式①
+$layout-width-inner: 1024px;
+
+// ブレークポイント 式②
+$breakpoints: (
+    "xs": "(width < 375px)",
+    "sm": "(375px <= width < 600px)",
+    "md": "(600px <= width < 900px)",
+    "lg": "(900px <= width < 1200px)",
+    "xl": "(1200px <= width )"
+) !default;
+
+// メディアクエリー　式③
+@mixin mq($breakpoint: pc) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }
